@@ -13,12 +13,13 @@ function postMessage(e) {
 	for(var i = 0; i < buttons.length; i++){
 		buttons[i].addEventListener("click", getParent);
 	}
-
+	document.getElementById("clear_box").disabled=false;
 }
 
 
 function clearBox(){
 	messageHolder.innerHTML = "";
+	document.getElementById("clear_box").disabled=true;
 }
 
 function getParent(){

@@ -15,3 +15,61 @@
 .mHolder{
 	display: block;
 }
+
+.dark-styles {
+	background-color: DarkGray;
+}
+
+.font-sizes {
+	font-size: xx-large;
+}
+ nav ul li {
+ 	list-style-type: none;
+ 	display: inline-block;
+ }
+.nav {	
+	width: 100%;
+	background-color: black;
+	height: 60px;
+	position: fixed;
+	margin-top: -60px;
+	padding-left: 15px;
+}
+
+body {
+	margin: 0px;
+	padding-top: 60px;
+}
+
+img {
+	height: 50px;
+	width: 50px;
+}
+
+h1 {
+	display: inline;
+	padding: 10px;
+}
+
+input[type = "checkbox"] {
+	display: inline;
+}
+
+input {
+	margin-left: 10px;
+}
+
+.target-margin {
+	margin-left: 10px;
+	list-style: none;
+	display: inline;
+	margin-top: 50px;
+}
+
+#message-holder {
+	margin: 10px;
+}
+ p {
+	margin: 10px;
+}
+
