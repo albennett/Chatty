@@ -1,0 +1,17 @@
+#message-holder{
+	border: 2px solid black;
+	width: 60%;
+	height: auto;
+	min-height: 400px;
+}
+
+
+.message-Item{
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.mHolder{
+	display: block;
+}
