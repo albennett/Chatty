@@ -26,7 +26,7 @@ function postMessage(e) {
 				console.log("I am editing", IAmEditing);
 				document.getElementsByClassName("pToAdd")[0].classList.remove("pToAdd");
 		} else if(theOneChecked !== undefined){
-	messageHolder.innerHTML += "<div class='mHolder'><p class='message-Item'><span>"+theOneChecked+":</span> "+messageInput.value+"</p>"+"<button class='bRemove'>Delete</button><button class='edit'>Edit</button></div>";
+	messageHolder.innerHTML += "<div class='mHolder'><p class='message-Item'><span>"+theOneChecked+":</span> "+messageInput.value+"</p>"+"<button class='bRemove'>Delete</button><button class='edit'>Edit</button><span class='date'>message sent on: "+theDate+"</span></div></div>";
 	messageInput.value = "";
 			} else {
 	messageHolder.innerHTML += "<div class='mHolder'><p class='message-Item'>"+messageInput.value+"</p>"+"<button class='bRemove'>Delete</button><button class='edit'>Edit</button><span class='date'>message sent on: "+theDate+"</span></div> ";
