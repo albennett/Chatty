@@ -21,13 +21,13 @@ function clearBox(){
 //function for editing messages when edit button clicked
 function editMessage(){
 	//set value of input to first childnode
-	$("#message-input").value = this.parentNode.childNodes[0].innerHTML;
+	$("#message-input").val($(this).parent().children("p").html());
 
 	//set iAmEditing to true
 	IAmEditing = true;
 
 	//add class pToAdd
-	this.parentNode.childNodes[0].classList.add('pToAdd');
+	$(this).parent().children("p").addClass('pToAdd');
 }
 
 //function to remove parent node from buttons
@@ -67,7 +67,7 @@ $("#message-input").keypress(function(e){
 			if(IAmEditing === true){
 
 				//get element with class name pToAdd
-				$(".pToAdd")[0].html($("#message-input").val());
+				$(".pToAdd").html($("#message-input").val());
 
 				// IAmEditing to false
 				IAmEditing = false;
@@ -75,7 +75,7 @@ $("#message-input").keypress(function(e){
 				console.log("I am editing", IAmEditing);
 
 				//remove edit class
-				$(".pToAdd")[0].classList.remove("pToAdd");
+				$(".pToAdd").classList.remove("pToAdd");
 
 				//if user is selected, put value of that radio button before the input message
 		} else if(theOneChecked !== undefined){

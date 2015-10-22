@@ -37,6 +37,10 @@
 	padding-left: 15px;
 }
 
+.nav ul {
+	display: none;
+}
+
 body {
 	margin: 0px;
 	padding-top: 60px;
