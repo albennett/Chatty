@@ -14,8 +14,9 @@ function postMessage(e) {
 
 //function to clear message holder
 function clearBox(){
-	$("#message-holder").innerHTML = "";
-	$("#clear_box").disabled=true;
+	$("#message-holder").html("");
+	// $("#clear_box").disabled=true;
+	$("#clear_box").prop('disabled', true);
 }
 
 //function for editing messages when edit button clicked
@@ -36,7 +37,10 @@ function getParent(){
 	// console.log(this + "This is what we are targeting");
 	// console.log(this.parentNode + "This is the parent");
 	// console.log(this.parentNode.parentNode + "this is the grandparent");
-	this.parentNode.parentNode.removeChild(this.parentNode);
+	// this.parentNode.parentNode.removeChild(this.parentNode);
+
+	//removes the div holder
+	console.log($(this).parent().remove());
 }
 
 
@@ -62,6 +66,8 @@ $("#message-input").keypress(function(e){
 	//if enter key is presses
 	if(e.which === 13){
 		console.log("insideife", e);
+		// document.getElementById("clear_box").disabled = false;
+		$("#clear_box").prop('disabled', false);
 
 			//if edit mode is on (true)
 			if(IAmEditing === true){
@@ -75,12 +81,12 @@ $("#message-input").keypress(function(e){
 				console.log("I am editing", IAmEditing);
 
 				//remove edit class
-				$(".pToAdd").classList.remove("pToAdd");
+				$(".pToAdd").removeClass("pToAdd");
 
 				//if user is selected, put value of that radio button before the input message
 		} else if(theOneChecked !== undefined){
 			//output with radio value
-	$("#message-holder").append("<div class='mHolder'><p class='message-Item'><span>"+theOneChecked+":</span> "+$("#message-input").val() +"</p>"+
+	$("#message-holder").append("<div class='mHolder'><span>"+theOneChecked+":</span>"+"<p class='message-Item'>"+$("#message-input").val() +"</p>"+
 	"<button class='bRemove'>Delete</button><button class='edit'>Edit</button><span class='date'>message sent on: "+theDate+"</span></div></div>");
 			//clear input
 	$("#message-input").val(""); 
@@ -88,8 +94,8 @@ $("#message-input").keypress(function(e){
 			//output with username value
 	$("#message-holder").append("<div class='mHolder'><p class='message-Item'>"+$("#message-input").val()+"</p>"+"<button class='bRemove'>Delete</button><button class='edit'>Edit</button><span class='date'>message sent on: "+theDate+"</span></div> ");
 			//clear value
-	$("#message-input").val("");
 		}
+		$("#message-input").val("");
 	}	
 	//get all buttons with delete class
 	var buttons = $("#message-holder .bRemove");
@@ -120,6 +126,7 @@ $("#message-input").keypress(function(e){
 		$("#message-holder").removeChild($("#message-holder").childNodes[0]);
 	}
 });
+
 //add event listener for clear function
 $("#clear_box").click(function() {
 	clearBox();

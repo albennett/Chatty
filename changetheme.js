@@ -9,11 +9,11 @@ var messageHolder = $("#message-holder");
 function changeDark (event) {
  if (choseDarkTheme.checked) {
 	 $("body").toggleClass("dark-styles");
-	  $("body").css("color", "white");
+	  // $("body").css("color", "black");
 	  console.log("hey");
  } else {
  	$("body").toggleClass("dark-styles");
- 	$("body").css("color", "black");
+ 	// $("body").css("color", "white");
  }
  console.log("hey");
 }
